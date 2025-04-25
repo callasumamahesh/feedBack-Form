@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function FeedbackForm() {
@@ -107,6 +108,9 @@ export default function FeedbackForm() {
         >
           {loading ? 'Submitting...' : 'Submit'}
         </button>
+        <Link href='/admin'>
+          <button className='w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-xl cursor-pointer'>Admin</button>
+        </Link>
       </form>
     </div>
   );
