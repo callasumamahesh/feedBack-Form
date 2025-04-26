@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Features
 
-## Getting Started
+A Form with three fields:
 
-First, run the development server:
+    Full Name
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    Email
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Feedback
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Admin Page to display all submitted feedbacks.( To navigate this admin page you can click the admin button the form or you can type /admin in url)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+MongoDB connected using Mongoose.
 
-## Learn More
+Two separate API Routes:
 
-To learn more about Next.js, take a look at the following resources:
+    One for handling POST (submitting feedback).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    One for handling GET (retrieving all feedbacks).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+In the Admin Page, there are Edit and Delete buttons placed for future implementation.
+(Currently, these buttons are not functional — they are added for reference.)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+How It Works
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+User fills out the form with their full name, email, and feedback.
+
+On submission, the feedback data is sent to the server (POST /api/feedbackpost).
+
+Admin Page fetches the feedbacks from the server (GET /api/feedback) and displays them.
+
+All feedbacks are stored securely in MongoDB.
