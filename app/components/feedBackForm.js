@@ -28,7 +28,7 @@ export default function FeedbackForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
@@ -46,13 +46,28 @@ export default function FeedbackForm() {
     }
 
     setLoading(true);
-
-    setTimeout(() => {
-      alert('Feedback submitted successfully!');
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-      setLoading(false);
-    }, 1500);
+    try {
+      const data = await fetch('http://localhost:3000/api/feedbackpost', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const res = await data.json();
+      console.log(res, 'This is response')
+      if(res.status === 201){
+        alert('Feedback Saved')
+        setFormData({name: '',
+          email: '',
+          message: '',})
+        setLoading(false)
+      }
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
   };
 
   return (
