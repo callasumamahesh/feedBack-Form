@@ -31,3 +31,11 @@ On submission, the feedback data is sent to the server (POST /api/feedbackpost).
 Admin Page fetches the feedbacks from the server (GET /api/feedback) and displays them.
 
 All feedbacks are stored securely in MongoDB.
+
+
+
+
+I completed this assignment with all requirements mentioned in the task file. And I deployed the project in the Netlify too.
+I provide the git-hub link and Netlify link below.
+Netlify Link : https://happyfeedback.netlify.app/
+Git-hub Link : https://github.com/callasumamahesh/feedBack-Form
